@@ -1,4 +1,4 @@
-package com.telmate.telmatevvwrapper
+package com.telmate.livekit
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -10,6 +10,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
+import com.telmate.livekit.R
 import io.livekit.android.LiveKit
 import io.livekit.android.events.RoomEvent
 import io.livekit.android.events.collect
@@ -18,20 +19,15 @@ import io.livekit.android.room.Room
 import io.livekit.android.ConnectOptions
 import io.livekit.android.room.track.Track
 import io.livekit.android.room.track.VideoTrack
+import io.livekit.android.util.LoggingLevel
 import livekit.org.webrtc.PeerConnection
 import kotlinx.coroutines.launch
-import java.util.ArrayList
-import java.util.Arrays
-import java.util.Iterator
-import java.util.List
 import org.json.JSONObject;
 import org.json.JSONException;
-import java.io.IOException;
 import java.net.HttpURLConnection ;
 import java.net.URL ;
 import java.io.BufferedReader ;
 import java.io.InputStreamReader ;
-import java.util.Collections;
 
 
 class MainActivity : AppCompatActivity() {
@@ -56,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         room.initVideoRenderer(findViewById<SurfaceViewRenderer>(R.id.renderer))
         Thread({
             //Do some Network Request
-            var roomName = "x7yc-pzmx"
+            var roomName = "jikv-qufu"
             var userName = "inmate"
             jsonObject = getJSONObjectFromURL("https://twilio-replacement-demos-qa-k8s.gtldev.net/api/token?identity="+userName+"&name="+userName+"&roomName="+roomName);            
         }).start()
@@ -115,6 +111,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             // Connect to server.
+            LiveKit.loggingLevel = LoggingLevel.VERBOSE;
+            LiveKit.enableWebRTCLogging = true;
             room.connect(
                 url = url,
                 token = token,

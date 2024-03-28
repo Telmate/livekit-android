@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.telmate.telmatevvwrapper'
+    namespace 'com.telmate.livekit'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.telmate.telmatevvwrapper"
+        applicationId "com.telmate.livekit"
         minSdk 25
         targetSdk 34
         versionCode 1

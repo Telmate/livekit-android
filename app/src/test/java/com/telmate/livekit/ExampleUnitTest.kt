@@ -1,4 +1,4 @@
-package com.telmate.telmatevvwrapper
+package com.telmate.livekit
 
 import org.junit.Test
 
