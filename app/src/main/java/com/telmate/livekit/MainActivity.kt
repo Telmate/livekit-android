@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         room.initVideoRenderer(findViewById<SurfaceViewRenderer>(R.id.renderer))
         Thread({
             //Do some Network Request
-            var roomName = "jikv-qufu"
+            var roomName = "r6aa-dd0q"
             var userName = "inmate"
             jsonObject = getJSONObjectFromURL("https://twilio-replacement-demos-qa-k8s.gtldev.net/api/token?identity="+userName+"&name="+userName+"&roomName="+roomName);            
         }).start()

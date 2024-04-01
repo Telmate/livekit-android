@@ -260,3 +260,4 @@ obj/
 
 # End of https://www.toptal.com/developers/gitignore/api/kotlin,androidstudio,intellij
 .idea
+.DS_Store

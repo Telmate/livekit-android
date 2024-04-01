@@ -16,7 +16,13 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    
+    packagingOptions {
+            pickFirst 'jniLibs/armeabi-v7a/liblkjingle_peerconnection_so.so'
+            pickFirst 'jniLibs/arm64-v8a/liblkjingle_peerconnection_so.so'
+            pickFirst 'jniLibs/x86/liblkjingle_peerconnection_so.so'
+            pickFirst 'jniLibs/x86_64/liblkjingle_peerconnection_so.so'
+    }
     buildTypes {
         release {
             minifyEnabled false
