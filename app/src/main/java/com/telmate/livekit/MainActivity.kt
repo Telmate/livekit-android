@@ -116,11 +116,9 @@ class MainActivity : AppCompatActivity() {
             room.connect(
                 url = url,
                 token = token,
-                options = ConnectOptions(
-                    rtcConfig = PeerConnection.RTCConfiguration(emptyList()).apply {
-                        networkPreference = PeerConnection.AdapterType.VPN
-                    },
-                ),
+                options = ConnectOptions(rtcConfig = PeerConnection.RTCConfiguration(emptyList()).apply {
+                    enableIceGatheringOnAnyAddressPorts = true
+                })
             )
 
 
